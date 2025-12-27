@@ -17,6 +17,7 @@ import { useCopyToClipboard } from 'react-use';
 import APIError from 'types/api/error';
 import { PendingInvite } from 'types/api/user/getPendingInvites';
 import { ROLES } from 'types/roles';
+import { getShareableUrl } from 'utils/basePath';
 
 import InviteUserModal from '../InviteUserModal/InviteUserModal';
 import { TitleWrapper } from './styles';
@@ -75,7 +76,7 @@ function PendingInvitesContainer(): JSX.Element {
 				id: data.id,
 				email: data.email,
 				accessLevel: data.role,
-				inviteLink: `${window.location.origin}${ROUTES.SIGN_UP}?token=${data.token}`,
+				inviteLink: getShareableUrl(ROUTES.SIGN_UP, `token=${data.token}`),
 			})),
 		[],
 	);

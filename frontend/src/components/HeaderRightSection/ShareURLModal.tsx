@@ -12,6 +12,7 @@ import { matchPath, useLocation } from 'react-router-dom';
 import { useCopyToClipboard } from 'react-use';
 import { AppState } from 'store/reducers';
 import { GlobalReducer } from 'types/reducer/globalTime';
+import { getShareableUrl } from 'utils/basePath';
 
 const routesToBeSharedWithTime = [
 	ROUTES.LOGS_EXPLORER,
@@ -79,17 +80,13 @@ function ShareURLModal(): JSX.Element {
 
 				urlQuery.delete(QueryParams.relativeTime);
 
-				currentUrl = `${window.location.origin}${
-					location.pathname
-				}?${urlQuery.toString()}`;
+				currentUrl = getShareableUrl(location.pathname, urlQuery.toString());
 			} else {
 				urlQuery.delete(QueryParams.startTime);
 				urlQuery.delete(QueryParams.endTime);
 
 				urlQuery.set(QueryParams.relativeTime, selectedTime);
-				currentUrl = `${window.location.origin}${
-					location.pathname
-				}?${urlQuery.toString()}`;
+				currentUrl = getShareableUrl(location.pathname, urlQuery.toString());
 			}
 		}
 

@@ -2,6 +2,7 @@ import './FunnelTable.styles.scss';
 
 import { Empty, Table, Tooltip } from 'antd';
 import { ColumnProps } from 'antd/es/table';
+import { getAssetUrl } from 'utils/basePath';
 
 interface FunnelTableProps {
 	loading?: boolean;
@@ -24,7 +25,7 @@ function FunnelTable({
 				<div className="funnel-table__title">{title}</div>
 				<div className="funnel-table__actions">
 					<Tooltip title={tooltip ?? null}>
-						<img src="/Icons/solid-info-circle.svg" alt="info" />
+						<img src={getAssetUrl('/Icons/solid-info-circle.svg')} alt="info" />
 					</Tooltip>
 				</div>
 			</div>

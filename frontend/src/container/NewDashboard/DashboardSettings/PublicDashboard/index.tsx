@@ -14,6 +14,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useCopyToClipboard } from 'react-use';
 import { PublicDashboardMetaProps } from 'types/api/dashboard/public/getMeta';
+import { getFullUrl } from 'utils/basePath';
 
 export const TIME_RANGE_PRESETS_OPTIONS = [
 	{
@@ -184,7 +185,7 @@ function PublicDashboardSetting(): JSX.Element {
 
 		try {
 			setCopyPublicDashboardURL(
-				`${window.location.origin}${publicDashboardResponse?.data?.publicPath}`,
+				getFullUrl(publicDashboardResponse?.data?.publicPath),
 			);
 			toast.success('Copied Public Dashboard URL successfully');
 		} catch (error) {
@@ -193,7 +194,7 @@ function PublicDashboardSetting(): JSX.Element {
 	};
 
 	const publicDashboardURL = useMemo(
-		() => `${window.location.origin}${publicDashboardResponse?.data?.publicPath}`,
+		() => getFullUrl(publicDashboardResponse?.data?.publicPath || ''),
 		[publicDashboardResponse],
 	);
 

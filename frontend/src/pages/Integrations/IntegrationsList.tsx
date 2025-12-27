@@ -3,6 +3,7 @@
 import './Integrations.styles.scss';
 
 import { Color } from '@signozhq/design-tokens';
+import { getAssetUrl } from 'utils/basePath';
 import { Button, List, Typography } from 'antd';
 import { useGetAllIntegrations } from 'hooks/Integrations/useGetAllIntegrations';
 import { useGetTenantLicense } from 'hooks/useGetTenantLicense';
@@ -21,7 +22,7 @@ export const AWS_INTEGRATION = {
 		email: 'integrations@signoz.io',
 		homepage: 'https://signoz.io',
 	},
-	icon: `Logos/aws-dark.svg`,
+	icon: getAssetUrl('/Logos/aws-dark.svg'),
 	is_installed: false,
 	is_new: true,
 };
@@ -74,7 +75,7 @@ function IntegrationsList(props: IntegrationsListProps): JSX.Element {
 				<div className="error-container">
 					<div className="error-content">
 						<img
-							src="/Icons/awwSnap.svg"
+							src={getAssetUrl('/Icons/awwSnap.svg')}
 							alt="error-emoji"
 							className="error-state-svg"
 						/>

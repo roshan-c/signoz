@@ -63,6 +63,7 @@ import {
 // see more: https://github.com/lucide-icons/lucide/issues/94
 import { handleContactSupport } from 'pages/Integrations/utils';
 import { useAppContext } from 'providers/App/App';
+import { getAssetUrl, getFullUrl } from 'utils/basePath';
 import { useDashboard } from 'providers/Dashboard/Dashboard';
 import { useErrorModal } from 'providers/ErrorModalProvider';
 import { useTimezone } from 'providers/Timezone';
@@ -508,7 +509,7 @@ function DashboardsList(): JSX.Element {
 													onClick={(e): void => {
 														e.stopPropagation();
 														e.preventDefault();
-														setCopy(`${window.location.origin}${getLink()}`);
+														setCopy(getFullUrl(getLink()));
 													}}
 												>
 													Copy Link
@@ -718,7 +719,7 @@ function DashboardsList(): JSX.Element {
 				) : dashboardFetchError ? (
 					<div className="dashboard-error-state">
 						<img
-							src="/Icons/awwSnap.svg"
+							src={getAssetUrl('/Icons/awwSnap.svg')}
 							alt="something went wrong"
 							className="error-img"
 						/>
@@ -748,7 +749,7 @@ function DashboardsList(): JSX.Element {
 				) : dashboards?.length === 0 && !searchString ? (
 					<div className="dashboard-empty-state">
 						<img
-							src="/Icons/dashboards.svg"
+							src={getAssetUrl('/Icons/dashboards.svg')}
 							alt="dashboards"
 							className="dashboard-img"
 						/>
@@ -829,7 +830,7 @@ function DashboardsList(): JSX.Element {
 
 						{dashboards?.length === 0 ? (
 							<div className="no-search">
-								<img src="/Icons/emptyState.svg" alt="img" className="img" />
+								<img src={getAssetUrl('/Icons/emptyState.svg')} alt="img" className="img" />
 								<Typography.Text className="text">
 									No dashboards found for {searchString}. Create a new dashboard?
 								</Typography.Text>

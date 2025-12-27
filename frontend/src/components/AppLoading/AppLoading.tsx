@@ -4,6 +4,7 @@ import { Typography } from 'antd';
 import get from 'api/browser/localstorage/get';
 import { LOCALSTORAGE } from 'constants/localStorage';
 import { THEME_MODE } from 'hooks/useDarkMode/constant';
+import { getAssetUrl } from 'utils/basePath';
 
 function AppLoading(): JSX.Element {
 	// Get theme from localStorage directly to avoid context dependency
@@ -25,7 +26,7 @@ function AppLoading(): JSX.Element {
 			<div className="app-loading-content">
 				<div className="brand">
 					<img
-						src="/Logos/signoz-brand-logo.svg"
+						src={getAssetUrl('/Logos/signoz-brand-logo.svg')}
 						alt="SigNoz"
 						className="brand-logo"
 					/>

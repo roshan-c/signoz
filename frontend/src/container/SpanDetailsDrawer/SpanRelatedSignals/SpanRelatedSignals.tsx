@@ -20,6 +20,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { BaseAutocompleteData } from 'types/api/queryBuilder/queryAutocompleteResponse';
 import { Span } from 'types/api/trace/getTraceV2';
 import { DataSource, LogsAggregatorOperator } from 'types/common/queryBuilder';
+import { getShareableUrl } from 'utils/basePath';
 
 import { RelatedSignalsViews } from '../constants';
 import SpanLogs from '../SpanLogs/SpanLogs';
@@ -159,9 +160,7 @@ function SpanRelatedSignals({
 		searchParams.set(QueryParams.endTime, endTimeMs.toString());
 
 		window.open(
-			`${window.location.origin}${
-				ROUTES.LOGS_EXPLORER
-			}?${searchParams.toString()}`,
+			getShareableUrl(ROUTES.LOGS_EXPLORER, searchParams.toString()),
 			'_blank',
 			'noopener,noreferrer',
 		);

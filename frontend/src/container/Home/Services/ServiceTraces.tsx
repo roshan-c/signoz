@@ -15,6 +15,7 @@ import { LicensePlatform } from 'types/api/licensesV3/getActive';
 import { ServicesList } from 'types/api/metrics/getService';
 import { GlobalReducer } from 'types/reducer/globalTime';
 import { USER_ROLES } from 'types/roles';
+import { getAssetUrl } from 'utils/basePath';
 
 import { DOCS_LINKS } from '../constants';
 import { columns, TIME_PICKER_OPTIONS } from './constants';
@@ -101,7 +102,7 @@ export default function ServiceTraces({
 				<div className="empty-state-content-container">
 					<div className="empty-state-content">
 						<img
-							src="/Icons/triangle-ruler.svg"
+							src={getAssetUrl('/Icons/triangle-ruler.svg')}
 							alt="empty-alert-icon"
 							className="empty-state-icon"
 						/>

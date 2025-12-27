@@ -6,6 +6,7 @@ import {
 import { useMemo } from 'react';
 import { UseQueryResult } from 'react-query';
 import { SuccessResponse } from 'types/api';
+import { getAssetUrl } from 'utils/basePath';
 
 import ErrorState from './ErrorState';
 
@@ -50,12 +51,12 @@ function StatusCodeTable({
 					emptyText:
 						isLoading || isRefetching ? null : (
 							<div className="no-status-code-data-message-container">
-								<div className="no-status-code-data-message-content">
-									<img
-										src="/Icons/emptyState.svg"
-										alt="thinking-emoji"
-										className="empty-state-svg"
-									/>
+							<div className="no-status-code-data-message-content">
+								<img
+									src={getAssetUrl('/Icons/emptyState.svg')}
+									alt="thinking-emoji"
+									className="empty-state-svg"
+								/>
 
 									<Typography.Text className="no-status-code-data-message">
 										This query had no results. Edit your query and try again!

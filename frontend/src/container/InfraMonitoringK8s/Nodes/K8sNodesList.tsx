@@ -27,6 +27,7 @@ import { useSearchParams } from 'react-router-dom-v5-compat';
 import { AppState } from 'store/reducers';
 import { IBuilderQuery } from 'types/api/queryBuilder/queryBuilderData';
 import { GlobalReducer } from 'types/reducer/globalTime';
+import { getAssetUrl } from 'utils/basePath';
 
 import { FeatureKeys } from '../../../constants/features';
 import { useAppContext } from '../../../providers/App/App';
@@ -671,7 +672,7 @@ function K8sNodesList({
 						<div className="no-filtered-hosts-message-container">
 							<div className="no-filtered-hosts-message-content">
 								<img
-									src="/Icons/emptyState.svg"
+									src={getAssetUrl('/Icons/emptyState.svg')}
 									alt="thinking-emoji"
 									className="empty-state-svg"
 								/>

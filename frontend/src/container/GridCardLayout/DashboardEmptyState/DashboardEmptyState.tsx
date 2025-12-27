@@ -10,6 +10,7 @@ import { useAppContext } from 'providers/App/App';
 import { useDashboard } from 'providers/Dashboard/Dashboard';
 import { useCallback } from 'react';
 import { ROLES, USER_ROLES } from 'types/roles';
+import { getAssetUrl } from 'utils/basePath';
 import { ComponentTypes } from 'utils/permission';
 
 export default function DashboardEmptyState(): JSX.Element {
@@ -49,7 +50,7 @@ export default function DashboardEmptyState(): JSX.Element {
 			<div className="dashboard-content">
 				<section className="heading">
 					<img
-						src="/Icons/dashboard_emoji.svg"
+						src={getAssetUrl('/Icons/dashboard_emoji.svg')}
 						alt="header-image"
 						style={{ height: '32px', width: '32px' }}
 					/>
@@ -65,7 +66,7 @@ export default function DashboardEmptyState(): JSX.Element {
 						<div className="actions-configure">
 							<div className="actions-configure-text">
 								<img
-									src="/Icons/tools.svg"
+									src={getAssetUrl('/Icons/tools.svg')}
 									alt="header-image"
 									style={{ height: '14px', width: '14px' }}
 								/>
@@ -83,7 +84,7 @@ export default function DashboardEmptyState(): JSX.Element {
 						<div className="actions-add-panel">
 							<div className="actions-panel-text">
 								<img
-									src="/Icons/landscape.svg"
+									src={getAssetUrl('/Icons/landscape.svg')}
 									alt="header-image"
 									style={{ height: '14px', width: '14px' }}
 								/>

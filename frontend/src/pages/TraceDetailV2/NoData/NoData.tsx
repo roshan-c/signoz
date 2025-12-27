@@ -4,6 +4,7 @@ import { Button, Typography } from 'antd';
 import { useGetTenantLicense } from 'hooks/useGetTenantLicense';
 import { LifeBuoy, RefreshCw } from 'lucide-react';
 import { handleContactSupport } from 'pages/Integrations/utils';
+import { getAssetUrl } from 'utils/basePath';
 
 function NoData(): JSX.Element {
 	const { isCloudUser: isCloudUserVal } = useGetTenantLicense();
@@ -11,7 +12,7 @@ function NoData(): JSX.Element {
 	return (
 		<div className="not-found-trace">
 			<section className="description">
-				<img src="/Icons/no-data.svg" alt="no-data" className="not-found-img" />
+				<img src={getAssetUrl('/Icons/no-data.svg')} alt="no-data" className="not-found-img" />
 				<Typography.Text className="not-found-text-1">
 					Uh-oh! We cannot show the selected trace.
 					<span className="not-found-text-2">
@@ -22,7 +23,7 @@ function NoData(): JSX.Element {
 			<section className="reasons">
 				<div className="reason-1">
 					<img
-						src="/Icons/construction.svg"
+						src={getAssetUrl('/Icons/construction.svg')}
 						alt="no-data"
 						className="construction-img"
 					/>
@@ -32,7 +33,7 @@ function NoData(): JSX.Element {
 					</Typography.Text>
 				</div>
 				<div className="reason-2">
-					<img src="/Icons/broom.svg" alt="no-data" className="broom-img" />
+					<img src={getAssetUrl('/Icons/broom.svg')} alt="no-data" className="broom-img" />
 					<Typography.Text className="text">
 						The trace has been deleted as the data has crossed it’s retention period.
 					</Typography.Text>

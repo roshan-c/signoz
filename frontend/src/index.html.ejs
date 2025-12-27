@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!--
+			The <base> tag and runtime configuration script will be injected here by the backend.
+			This allows serving the frontend from a sub-path (e.g., /signoz/).
+			See pkg/web/routerweb/provider.go for the injection logic.
+		-->
 		<meta charset="utf-8" />
 		<meta
 			http-equiv="Cache-Control"
@@ -40,12 +45,12 @@
 		<meta
 			data-react-helmet="true"
 			property="og:image"
-			content="/images/signoz-hero-image.webp"
+			content="images/signoz-hero-image.webp"
 		/>
 		<meta
 			data-react-helmet="true"
 			name="twitter:image"
-			content="/images/signoz-hero-image.webp"
+			content="images/signoz-hero-image.webp"
 		/>
 		<meta
 			data-react-helmet="true"
@@ -60,7 +65,7 @@
 		<meta data-react-helmet="true" name="docusaurus_locale" content="en" />
 		<meta data-react-helmet="true" name="docusaurus_tag" content="default" />
 		<meta name="robots" content="noindex" />
-		<link data-react-helmet="true" rel="shortcut icon" href="/favicon.ico" />
+		<link data-react-helmet="true" rel="shortcut icon" href="favicon.ico" />
 
 		<% if (htmlWebpackPlugin.options.templateParameters.preloadFonts) { %> <%
 		htmlWebpackPlugin.options.templateParameters.preloadFonts.forEach(function(font)
@@ -122,6 +127,6 @@
 				s.parentNode.insertBefore(a, s);
 			})(document, 'script');
 		</script>
-		<link rel="stylesheet" href="/css/uPlot.min.css" />
+		<link rel="stylesheet" href="css/uPlot.min.css" />
 	</body>
 </html>

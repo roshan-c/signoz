@@ -1,6 +1,7 @@
 import './PanelDataLoading.styles.scss';
 
 import { Typography } from 'antd';
+import { getAssetUrl } from 'utils/basePath';
 
 export function PanelDataLoading(): JSX.Element {
 	return (
@@ -8,7 +9,7 @@ export function PanelDataLoading(): JSX.Element {
 			<div className="loading-panel-data-content">
 				<img
 					className="loading-gif"
-					src="/Icons/loading-plane.gif"
+					src={getAssetUrl('/Icons/loading-plane.gif')}
 					alt="wait-icon"
 				/>
 

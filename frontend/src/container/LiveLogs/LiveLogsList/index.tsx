@@ -22,6 +22,7 @@ import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 // interfaces
 import { ILog } from 'types/api/logs/log';
 import { DataSource, StringOperators } from 'types/common/queryBuilder';
+import { getAssetUrl } from 'utils/basePath';
 
 import { LiveLogsListProps } from './types';
 
@@ -116,7 +117,7 @@ function LiveLogsList({ logs, isLoading }: LiveLogsListProps): JSX.Element {
 				<div className="loading-live-logs-content">
 					<img
 						className="loading-gif"
-						src="/Icons/loading-plane.gif"
+						src={getAssetUrl('/Icons/loading-plane.gif')}
 						alt="wait-icon"
 					/>
 

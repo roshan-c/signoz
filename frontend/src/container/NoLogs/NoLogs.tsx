@@ -7,6 +7,7 @@ import { useGetTenantLicense } from 'hooks/useGetTenantLicense';
 import history from 'lib/history';
 import { ArrowUpRight } from 'lucide-react';
 import { DataSource } from 'types/common/queryBuilder';
+import { getAssetUrl } from 'utils/basePath';
 import DOCLINKS from 'utils/docLinks';
 
 export default function NoLogs({
@@ -50,7 +51,7 @@ export default function NoLogs({
 	return (
 		<div className="no-logs-container">
 			<div className="no-logs-container-content">
-				<img className="eyes-emoji" src="/Images/eyesEmoji.svg" alt="eyes emoji" />
+				<img className="eyes-emoji" src={getAssetUrl('/Images/eyesEmoji.svg')} alt="eyes emoji" />
 				<Typography className="no-logs-text">
 					No {dataSource} yet.
 					<span className="sub-text">

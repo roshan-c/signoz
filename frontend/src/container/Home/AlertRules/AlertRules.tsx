@@ -13,6 +13,7 @@ import { useQuery } from 'react-query';
 import { Link, useLocation } from 'react-router-dom';
 import { GettableAlert } from 'types/api/alerts/get';
 import { USER_ROLES } from 'types/roles';
+import { getAssetUrl } from 'utils/basePath';
 
 export default function AlertRules({
 	onUpdateChecklistDoneItem,
@@ -62,7 +63,7 @@ export default function AlertRules({
 			<div className="empty-state-content-container">
 				<div className="empty-state-content">
 					<img
-						src="/Icons/beacon.svg"
+						src={getAssetUrl('/Icons/beacon.svg')}
 						alt="empty-alert-icon"
 						className="empty-state-icon"
 					/>
@@ -154,8 +155,8 @@ export default function AlertRules({
 							<img
 								src={
 									Math.random() % 2 === 0
-										? '/Icons/eight-ball.svg'
-										: '/Icons/circus-tent.svg'
+										? getAssetUrl('/Icons/eight-ball.svg')
+										: getAssetUrl('/Icons/circus-tent.svg')
 								}
 								alt="alert-rules"
 								className="alert-rules-img"

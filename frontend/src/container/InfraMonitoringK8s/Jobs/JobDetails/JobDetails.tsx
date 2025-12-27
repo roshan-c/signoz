@@ -47,6 +47,7 @@ import {
 	TracesAggregatorOperator,
 } from 'types/common/queryBuilder';
 import { GlobalReducer } from 'types/reducer/globalTime';
+import { getShareableUrl } from 'utils/basePath';
 import { v4 as uuidv4 } from 'uuid';
 
 import JobEvents from '../../EntityDetailsUtils/EntityEvents';
@@ -441,7 +442,7 @@ function JobDetails({
 			urlQuery.set('compositeQuery', JSON.stringify(compositeQuery));
 
 			window.open(
-				`${window.location.origin}${ROUTES.LOGS_EXPLORER}?${urlQuery.toString()}`,
+				getShareableUrl(ROUTES.LOGS_EXPLORER, urlQuery.toString()),
 				'_blank',
 			);
 		} else if (selectedView === VIEW_TYPES.TRACES) {
@@ -463,7 +464,7 @@ function JobDetails({
 			urlQuery.set('compositeQuery', JSON.stringify(compositeQuery));
 
 			window.open(
-				`${window.location.origin}${ROUTES.TRACES_EXPLORER}?${urlQuery.toString()}`,
+				getShareableUrl(ROUTES.TRACES_EXPLORER, urlQuery.toString()),
 				'_blank',
 			);
 		}

@@ -12,6 +12,8 @@ import logEvent from 'api/common/logEvent';
 import { InfraMonitoringEvents } from 'constants/events';
 import { useCallback, useMemo } from 'react';
 
+import { getAssetUrl } from 'utils/basePath';
+
 import HostsEmptyOrIncorrectMetrics from './HostsEmptyOrIncorrectMetrics';
 import {
 	formatDataForTable,
@@ -118,7 +120,7 @@ export default function HostsListTable({
 			<div className="no-filtered-hosts-message-container">
 				<div className="no-filtered-hosts-message-content">
 					<img
-						src="/Icons/emptyState.svg"
+						src={getAssetUrl('/Icons/emptyState.svg')}
 						alt="thinking-emoji"
 						className="empty-state-svg"
 					/>

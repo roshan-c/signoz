@@ -19,6 +19,7 @@ import { DataTypes } from 'types/api/queryBuilder/queryAutocompleteResponse';
 import { Query } from 'types/api/queryBuilder/queryBuilderData';
 import { EQueryType } from 'types/common/dashboard';
 import { DataSource } from 'types/common/queryBuilder';
+import { getAssetUrl } from 'utils/basePath';
 
 const enum ApplicationLogsType {
 	FROM_LOG_FILE = 'from-log-file',
@@ -165,7 +166,7 @@ export default function LogsConnectionStatus(): JSX.Element {
 					<Header
 						entity="kubernetes"
 						heading="Collecting Kubernetes Pod logs"
-						imgURL="/Logos/kubernetes.svg"
+						imgURL={getAssetUrl('/Logos/kubernetes.svg')}
 						docsURL="https://signoz.io/docs/userguide/collect_kubernetes_pod_logs/#collect-kubernetes-pod-logs-in-signoz-cloud"
 						imgClassName="supported-logs-type-img"
 					/>
@@ -176,7 +177,7 @@ export default function LogsConnectionStatus(): JSX.Element {
 					<Header
 						entity="docker"
 						heading="Collecting Docker container logs"
-						imgURL="/Logos/docker.svg"
+						imgURL={getAssetUrl('/Logos/docker.svg')}
 						docsURL="https://signoz.io/docs/userguide/collect_docker_logs/"
 						imgClassName="supported-logs-type-img"
 					/>
@@ -187,7 +188,7 @@ export default function LogsConnectionStatus(): JSX.Element {
 					<Header
 						entity="syslog"
 						heading="Collecting Syslogs"
-						imgURL="/Logos/syslogs.svg"
+						imgURL={getAssetUrl('/Logos/syslogs.svg')}
 						docsURL="https://signoz.io/docs/userguide/collecting_syslogs/"
 						imgClassName="supported-logs-type-img"
 					/>
@@ -197,7 +198,7 @@ export default function LogsConnectionStatus(): JSX.Element {
 					<Header
 						entity="nodejs"
 						heading="Collecting NodeJS winston logs"
-						imgURL="/Logos/node-js.svg"
+						imgURL={getAssetUrl('/Logos/node-js.svg')}
 						docsURL="https://signoz.io/docs/userguide/collecting_nodejs_winston_logs/"
 						imgClassName="supported-logs-type-img"
 					/>
@@ -212,11 +213,11 @@ export default function LogsConnectionStatus(): JSX.Element {
 								? 'Collecting Application Logs from Log file'
 								: 'Collecting Application Logs Using OTEL SDK'
 						}
-						imgURL={`/Logos/${
+						imgURL={getAssetUrl(`/Logos/${
 							logType === ApplicationLogsType.FROM_LOG_FILE
 								? 'software-window'
 								: 'cmd-terminal'
-						}.svg`}
+						}.svg`)}
 						docsURL={
 							logType === ApplicationLogsType.FROM_LOG_FILE
 								? 'https://signoz.io/docs/userguide/collect_logs_from_file/'

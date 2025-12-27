@@ -15,6 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { useCopyToClipboard } from 'react-use';
 import APIError from 'types/api/error';
 import { ROLES } from 'types/roles';
+import { getShareableUrl } from 'utils/basePath';
 
 import { InputGroup, SelectDrawer, Title } from './styles';
 
@@ -36,7 +37,7 @@ function EditMembersDetails({
 	const [state, copyToClipboard] = useCopyToClipboard();
 
 	const getPasswordLink = (token: string): string =>
-		`${window.location.origin}${ROUTES.PASSWORD_RESET}?token=${token}`;
+		getShareableUrl(ROUTES.PASSWORD_RESET, `token=${token}`);
 
 	const onChangeHandler = useCallback(
 		(setFunc: Dispatch<SetStateAction<string>>, value: string) => {

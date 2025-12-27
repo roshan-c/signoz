@@ -1,6 +1,7 @@
 import './PublicDashboard.styles.scss';
 
 import { Typography } from 'antd';
+import { getAssetUrl } from 'utils/basePath';
 import { useGetPublicDashboardData } from 'hooks/dashboard/useGetPublicDashboardData';
 import { FrownIcon } from 'lucide-react';
 import { useParams } from 'react-router-dom';
@@ -39,7 +40,7 @@ function PublicDashboardPage(): JSX.Element {
 					<div className="public-dashboard-error-content-header">
 						<div className="brand">
 							<img
-								src="/Logos/signoz-brand-logo.svg"
+								src={getAssetUrl('/Logos/signoz-brand-logo.svg')}
 								alt="SigNoz"
 								className="brand-logo"
 							/>

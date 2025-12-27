@@ -5,6 +5,7 @@ import { Color } from '@signozhq/design-tokens';
 import { Spin } from 'antd';
 import { CircleCheck } from 'lucide-react';
 import React, { useMemo } from 'react';
+import { getAssetUrl } from 'utils/basePath';
 
 interface IQueryStatusProps {
 	loading: boolean;
@@ -24,7 +25,7 @@ export default function QueryStatus(
 		if (error) {
 			return (
 				<img
-					src="/Icons/solid-x-circle.svg"
+					src={getAssetUrl('/Icons/solid-x-circle.svg')}
 					alt="header"
 					className="error"
 					style={{ height: '14px', width: '14px' }}

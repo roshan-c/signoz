@@ -29,6 +29,8 @@ import { AppState } from 'store/reducers';
 import { IBuilderQuery } from 'types/api/queryBuilder/queryBuilderData';
 import { GlobalReducer } from 'types/reducer/globalTime';
 
+import { getAssetUrl } from 'utils/basePath';
+
 import { FeatureKeys } from '../../../constants/features';
 import { useAppContext } from '../../../providers/App/App';
 import { getOrderByFromParams } from '../commonUtils';
@@ -657,15 +659,15 @@ function K8sJobsList({
 					indicator: <Spin indicator={<LoadingOutlined size={14} spin />} />,
 				}}
 				locale={{
-					emptyText:
-						isFetching || isLoading ? null : (
-							<div className="no-filtered-hosts-message-container">
-								<div className="no-filtered-hosts-message-content">
-									<img
-										src="/Icons/emptyState.svg"
-										alt="thinking-emoji"
-										className="empty-state-svg"
-									/>
+				emptyText:
+					isFetching || isLoading ? null : (
+						<div className="no-filtered-hosts-message-container">
+							<div className="no-filtered-hosts-message-content">
+								<img
+									src={getAssetUrl('/Icons/emptyState.svg')}
+									alt="thinking-emoji"
+									className="empty-state-svg"
+								/>
 
 									<Typography.Text className="no-filtered-hosts-message">
 										This query had no results. Edit your query and try again!

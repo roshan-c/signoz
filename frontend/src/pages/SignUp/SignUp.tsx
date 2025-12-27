@@ -1,6 +1,7 @@
 import './SignUp.styles.scss';
 
 import { Button, Form, Input, Typography } from 'antd';
+import { getAssetUrl } from 'utils/basePath';
 import logEvent from 'api/common/logEvent';
 import accept from 'api/v1/invite/id/accept';
 import getInviteDetails from 'api/v1/invite/id/get';
@@ -197,7 +198,7 @@ function SignUp(): JSX.Element {
 			<div className="signup-page-content">
 				<div className="brand-container">
 					<img
-						src="/Logos/signoz-brand-logo.svg"
+						src={getAssetUrl('/Logos/signoz-brand-logo.svg')}
 						alt="logo"
 						className="brand-logo"
 					/>

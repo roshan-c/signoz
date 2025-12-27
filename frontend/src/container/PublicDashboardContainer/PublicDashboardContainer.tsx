@@ -18,6 +18,7 @@ import RGL, { WidthProvider } from 'react-grid-layout';
 import { SuccessResponseV2 } from 'types/api';
 import { Widgets } from 'types/api/dashboard/getAll';
 import { PublicDashboardDataProps } from 'types/api/dashboard/public/get';
+import { getAssetUrl } from 'utils/basePath';
 
 import Panel from './Panel';
 
@@ -130,7 +131,7 @@ function PublicDashboardContainer({
 				<div className="public-dashboard-header-left">
 					<div className="brand-logo">
 						<img
-							src="/Logos/signoz-brand-logo.svg"
+							src={getAssetUrl('/Logos/signoz-brand-logo.svg')}
 							alt="SigNoz"
 							className="brand-logo-img"
 						/>

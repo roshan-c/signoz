@@ -21,6 +21,7 @@ import { BaseAutocompleteData } from 'types/api/queryBuilder/queryAutocompleteRe
 import { HandleChangeQueryDataV5 } from 'types/common/operations.types';
 import { DataSource } from 'types/common/queryBuilder';
 import { GlobalReducer } from 'types/reducer/globalTime';
+import { getAssetUrl } from 'utils/basePath';
 
 import { ApiMonitoringHardcodedAttributeKeys } from '../../constants';
 import { DEFAULT_PARAMS, useApiMonitoringParams } from '../../queryParams';
@@ -137,12 +138,12 @@ function DomainList(): JSX.Element {
 					emptyText:
 						isFetching || isLoading ? null : (
 							<div className="no-filtered-domains-message-container">
-								<div className="no-filtered-domains-message-content">
-									<img
-										src="/Icons/emptyState.svg"
-										alt="thinking-emoji"
-										className="empty-state-svg"
-									/>
+							<div className="no-filtered-domains-message-content">
+								<img
+									src={getAssetUrl('/Icons/emptyState.svg')}
+									alt="thinking-emoji"
+									className="empty-state-svg"
+								/>
 
 									<Typography.Text className="no-filtered-domains-message">
 										This query had no results. Edit your query and try again!

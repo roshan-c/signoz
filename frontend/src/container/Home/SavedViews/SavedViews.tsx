@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 import { ViewProps } from 'types/api/saveViews/types';
 import { DataSource } from 'types/common/queryBuilder';
 import { USER_ROLES } from 'types/roles';
+import { getAssetUrl } from 'utils/basePath';
 
 export default function SavedViews({
 	onUpdateChecklistDoneItem,
@@ -149,7 +150,7 @@ export default function SavedViews({
 			<div className="empty-state-content-container">
 				<div className="empty-state-content">
 					<img
-						src="/Icons/floppy-disc.svg"
+						src={getAssetUrl('/Icons/floppy-disc.svg')}
 						alt="empty-alert-icon"
 						className="empty-state-icon"
 					/>
@@ -223,7 +224,7 @@ export default function SavedViews({
 						<div className="saved-view-item-name-container home-data-item-name-container">
 							<img
 								src={
-									view.id % 2 === 0 ? '/Icons/eight-ball.svg' : '/Icons/circus-tent.svg'
+									view.id % 2 === 0 ? getAssetUrl('/Icons/eight-ball.svg') : getAssetUrl('/Icons/circus-tent.svg')
 								}
 								alt="alert-rules"
 								className="alert-rules-img"
@@ -346,7 +347,7 @@ export default function SavedViews({
 									}
 									onClick={(): void => handleTabChange('logs')}
 								>
-									<img src="/Icons/logs.svg" alt="logs-icon" className="logs-icon" />
+									<img src={getAssetUrl('/Icons/logs.svg')} alt="logs-icon" className="logs-icon" />
 									Logs
 								</Button>
 								<Button

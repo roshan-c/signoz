@@ -23,6 +23,7 @@ import { MetricRangePayloadProps } from 'types/api/metrics/getQueryRange';
 import { DataTypes } from 'types/api/queryBuilder/queryAutocompleteResponse';
 import { IBuilderQuery } from 'types/api/queryBuilder/queryBuilderData';
 import { DataSource } from 'types/common/queryBuilder';
+import { getAssetUrl } from 'utils/basePath';
 
 import EndPointsDropDown from './components/EndPointsDropDown';
 import ErrorState from './components/ErrorState';
@@ -207,12 +208,12 @@ function TopErrors({
 						emptyText:
 							isLoading || isRefetching ? null : (
 								<div className="no-filtered-endpoints-message-container">
-									<div className="no-filtered-endpoints-message-content">
-										<img
-											src="/Icons/emptyState.svg"
-											alt="thinking-emoji"
-											className="empty-state-svg"
-										/>
+								<div className="no-filtered-endpoints-message-content">
+									<img
+										src={getAssetUrl('/Icons/emptyState.svg')}
+										alt="thinking-emoji"
+										className="empty-state-svg"
+									/>
 
 										<Typography.Text className="no-filtered-endpoints-message">
 											{showStatusCodeErrors

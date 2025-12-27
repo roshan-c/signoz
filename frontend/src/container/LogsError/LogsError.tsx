@@ -6,6 +6,7 @@ import { Typography } from 'antd';
 import { useGetTenantLicense } from 'hooks/useGetTenantLicense';
 import history from 'lib/history';
 import { ArrowRight } from 'lucide-react';
+import { getAssetUrl } from 'utils/basePath';
 
 export default function LogsError(): JSX.Element {
 	const { isCloudUser: isCloudUserVal } = useGetTenantLicense();
@@ -22,7 +23,7 @@ export default function LogsError(): JSX.Element {
 		<div className="logs-error-container">
 			<div className="logs-error-content">
 				<img
-					src="/Icons/awwSnap.svg"
+					src={getAssetUrl('/Icons/awwSnap.svg')}
 					alt="error-emoji"
 					className="error-state-svg"
 				/>

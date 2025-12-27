@@ -23,6 +23,7 @@ import { UPDATE_TIME_INTERVAL } from 'types/actions/globalTime';
 import { PayloadProps as QueryServicePayloadProps } from 'types/api/metrics/getService';
 import { GlobalReducer } from 'types/reducer/globalTime';
 import { Tags } from 'types/reducer/trace';
+import { getAssetUrl } from 'utils/basePath';
 
 const pollingInterval = 10000;
 
@@ -138,7 +139,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="java"
 						heading="Java OpenTelemetry Instrumentation"
-						imgURL="/Logos/java.png"
+						imgURL={getAssetUrl('/Logos/java.png')}
 						docsURL="https://signoz.io/docs/instrumentation/java/"
 						imgClassName="supported-language-img"
 					/>
@@ -149,7 +150,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="python"
 						heading="Python OpenTelemetry Instrumentation"
-						imgURL="/Logos/python.png"
+						imgURL={getAssetUrl('/Logos/python.png')}
 						docsURL="https://signoz.io/docs/instrumentation/python/"
 						imgClassName="supported-language-img"
 					/>
@@ -160,7 +161,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="javascript"
 						heading="Javascript OpenTelemetry Instrumentation"
-						imgURL="/Logos/javascript.png"
+						imgURL={getAssetUrl('/Logos/javascript.png')}
 						docsURL="https://signoz.io/docs/instrumentation/javascript/"
 						imgClassName="supported-language-img"
 					/>
@@ -170,7 +171,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="go"
 						heading="Go OpenTelemetry Instrumentation"
-						imgURL="/Logos/go.png"
+						imgURL={getAssetUrl('/Logos/go.png')}
 						docsURL="https://signoz.io/docs/instrumentation/golang/"
 						imgClassName="supported-language-img"
 					/>
@@ -180,7 +181,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="rails"
 						heading="Ruby on Rails OpenTelemetry Instrumentation"
-						imgURL="/Logos/rails.png"
+						imgURL={getAssetUrl('/Logos/rails.png')}
 						docsURL="https://signoz.io/docs/instrumentation/ruby-on-rails/"
 						imgClassName="supported-language-img"
 					/>
@@ -190,7 +191,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="rust"
 						heading="Rust OpenTelemetry Instrumentation"
-						imgURL="/Logos/rust.png"
+						imgURL={getAssetUrl('/Logos/rust.png')}
 						docsURL="https://signoz.io/docs/instrumentation/rust/"
 						imgClassName="supported-language-img"
 					/>
@@ -200,7 +201,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="rust"
 						heading="Elixir OpenTelemetry Instrumentation"
-						imgURL="/Logos/elixir.png"
+						imgURL={getAssetUrl('/Logos/elixir.png')}
 						docsURL="https://signoz.io/docs/instrumentation/elixir/"
 						imgClassName="supported-language-img"
 					/>
@@ -210,7 +211,7 @@ export default function ConnectionStatus(): JSX.Element {
 					<Header
 						entity="swift"
 						heading="Swift OpenTelemetry Instrumentation"
-						imgURL="/Logos/swift.png"
+						imgURL={getAssetUrl('/Logos/swift.png')}
 						docsURL="https://signoz.io/docs/instrumentation/swift/"
 						imgClassName="supported-language-img"
 					/>

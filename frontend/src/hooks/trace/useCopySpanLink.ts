@@ -4,6 +4,7 @@ import { MouseEventHandler, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useCopyToClipboard } from 'react-use';
 import { Span } from 'types/api/trace/getTraceV2';
+import { getShareableUrl } from 'utils/basePath';
 
 export const useCopySpanLink = (
 	span?: Span,
@@ -26,7 +27,7 @@ export const useCopySpanLink = (
 				urlQuery.set('spanId', span?.spanId);
 			}
 
-			const link = `${window.location.origin}${pathname}?${urlQuery.toString()}`;
+			const link = getShareableUrl(pathname, urlQuery.toString());
 
 			setCopy(link);
 			notifications.success({

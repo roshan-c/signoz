@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import { useMutation } from 'react-query';
 import APIError from 'types/api/error';
 import { LicensePlatform, LicenseState } from 'types/api/licensesV3/getActive';
+import { getAssetUrl } from 'utils/basePath';
 import { getFormattedDateWithMinutes } from 'utils/timeUtils';
 
 function WorkspaceSuspended(): JSX.Element {
@@ -166,7 +167,7 @@ function WorkspaceSuspended(): JSX.Element {
 							)}
 							<div className="workspace-suspended__creative">
 								<img
-									src="/Images/feature-graphic-correlation.svg"
+									src={getAssetUrl('/Images/feature-graphic-correlation.svg')}
 									alt="correlation-graphic"
 								/>
 							</div>

@@ -21,6 +21,7 @@ import history from 'lib/history';
 import { isEmpty, isNull } from 'lodash-es';
 import { UserPlus } from 'lucide-react';
 import { SetStateAction, useState } from 'react';
+import { getAssetUrl } from 'utils/basePath';
 
 import { useOnboardingContext } from '../../context/OnboardingContext';
 import {
@@ -389,7 +390,7 @@ export default function ModuleStepsContainer({
 				<div>
 					<div className="steps-container-header">
 						<div className="brand-logo" onClick={handleLogoClick}>
-							<img src="/Logos/signoz-brand-logo.svg" alt="SigNoz" />
+							<img src={getAssetUrl('/Logos/signoz-brand-logo.svg')} alt="SigNoz" />
 
 							<div className="brand-logo-name">SigNoz</div>
 						</div>

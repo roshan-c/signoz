@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 import APIError from 'types/api/error';
 import { GettableAuthDomain, SSOType } from 'types/api/v1/domains/list';
+import { getFullUrl } from 'utils/basePath';
 
 import CreateEdit from './CreateEdit/CreateEdit';
 import Toggle from './Toggle';
@@ -46,7 +47,7 @@ const columns: ColumnsType<GettableAuthDomain> = [
 				);
 			}
 
-			const href = `${window.location.origin}/${relayPath}`;
+			const href = getFullUrl(relayPath);
 			return <CopyToClipboard textToCopy={href} />;
 		},
 	},

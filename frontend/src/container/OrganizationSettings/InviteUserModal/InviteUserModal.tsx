@@ -5,6 +5,7 @@ import { useNotifications } from 'hooks/useNotifications';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import APIError from 'types/api/error';
+import { getFrontendBaseUrl } from 'utils/basePath';
 
 import InviteTeamMembers from '../InviteTeamMembers';
 import { InviteMemberFormValues } from '../PendingInvitesContainer';
@@ -41,7 +42,7 @@ function InviteUserModal(props: InviteUserModalProps): JSX.Element {
 								email: member.email,
 								name: member?.name,
 								role: member.role,
-								frontendBaseUrl: window.location.origin,
+								frontendBaseUrl: getFrontendBaseUrl(),
 							});
 
 							notifications.success({

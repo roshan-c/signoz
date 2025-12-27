@@ -2,6 +2,7 @@ import './Containers.styles.scss';
 
 import { Space, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { getAssetUrl } from 'utils/basePath';
 
 import WaitlistFragment from '../WaitlistFragment/WaitlistFragment';
 
@@ -16,7 +17,7 @@ function Containers(): JSX.Element {
 				<div className="dev-status-container">
 					<div className="infra-container-card">
 						<img
-							src="/Icons/infraContainers.svg"
+							src={getAssetUrl('/Icons/infraContainers.svg')}
 							alt="infra-container"
 							width={32}
 							height={32}
@@ -29,7 +30,7 @@ function Containers(): JSX.Element {
 
 					<div className="infra-container-working-msg">
 						<Space>
-							<img src="/Icons/broom.svg" alt="broom" width={24} height={24} />
+							<img src={getAssetUrl('/Icons/broom.svg')} alt="broom" width={24} height={24} />
 							<Text className="infra-container-card-text">{t('working_message')}</Text>
 						</Space>
 					</div>

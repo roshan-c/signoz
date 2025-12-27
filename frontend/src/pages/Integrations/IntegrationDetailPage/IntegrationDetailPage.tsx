@@ -4,6 +4,7 @@
 import './IntegrationDetailPage.styles.scss';
 
 import { Color } from '@signozhq/design-tokens';
+import { getAssetUrl } from 'utils/basePath';
 import { Button, Flex, Skeleton, Typography } from 'antd';
 import { useGetIntegration } from 'hooks/Integrations/useGetIntegration';
 import { useGetIntegrationStatus } from 'hooks/Integrations/useGetIntegrationStatus';
@@ -88,7 +89,7 @@ function IntegrationDetailPage(props: IntegrationDetailPageProps): JSX.Element {
 				<div className="error-container">
 					<div className="error-content">
 						<img
-							src="/Icons/awwSnap.svg"
+							src={getAssetUrl('/Icons/awwSnap.svg')}
 							alt="error-emoji"
 							className="error-state-svg"
 						/>

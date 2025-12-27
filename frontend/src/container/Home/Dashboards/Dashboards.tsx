@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dashboard } from 'types/api/dashboard/getAll';
 import { USER_ROLES } from 'types/roles';
+import { getAssetUrl } from 'utils/basePath';
 
 export default function Dashboards({
 	onUpdateChecklistDoneItem,
@@ -51,7 +52,7 @@ export default function Dashboards({
 			<div className="empty-state-content-container">
 				<div className="empty-state-content">
 					<img
-						src="/Icons/dials.svg"
+						src={getAssetUrl('/Icons/dials.svg')}
 						alt="empty-alert-icon"
 						className="empty-state-icon"
 					/>
@@ -132,15 +133,15 @@ export default function Dashboards({
 							}}
 						>
 							<div className="dashboard-item-name-container home-data-item-name-container">
-								<img
-									src={
-										Math.random() % 2 === 0
-											? '/Icons/eight-ball.svg'
-											: '/Icons/circus-tent.svg'
-									}
-									alt="alert-rules"
-									className="alert-rules-img"
-								/>
+							<img
+								src={
+									Math.random() % 2 === 0
+										? getAssetUrl('/Icons/eight-ball.svg')
+										: getAssetUrl('/Icons/circus-tent.svg')
+								}
+								alt="alert-rules"
+								className="alert-rules-img"
+							/>
 
 								<div className="alert-rule-item-name home-data-item-name">
 									{dashboard.data.title}

@@ -66,7 +66,7 @@ import { AppState } from 'store/reducers';
 import AppReducer from 'types/reducer/app';
 import { USER_ROLES } from 'types/roles';
 import { checkVersionState } from 'utils/app';
-import { showErrorNotification } from 'utils/error';
+import { getAssetUrl } from 'utils/basePath';
 
 import { useCmdK } from '../../providers/cmdKProvider';
 import { routeConfig } from './config';
@@ -913,7 +913,7 @@ function SideNav({ isPinned }: { isPinned: boolean }): JSX.Element {
 									onClickHandler(ROUTES.HOME, event);
 								}}
 							>
-								<img src="/Logos/signoz-brand-logo.svg" alt="SigNoz" />
+								<img src={getAssetUrl('/Logos/signoz-brand-logo.svg')} alt="SigNoz" />
 							</div>
 
 							{licenseTag && (

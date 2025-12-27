@@ -35,6 +35,7 @@ import {
 	useState,
 } from 'react';
 import { Span } from 'types/api/trace/getTraceV2';
+import { getAssetUrl } from 'utils/basePath';
 import { toFixed } from 'utils/toFixed';
 
 import Filters from './Filters/Filters';
@@ -191,7 +192,7 @@ function SpanOverview({
 										icon={
 											<img
 												className="add-funnel-button__icon"
-												src="/Icons/funnel-add.svg"
+												src={getAssetUrl('/Icons/funnel-add.svg')}
 												alt="funnel-icon"
 											/>
 										}

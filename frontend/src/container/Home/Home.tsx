@@ -30,6 +30,7 @@ import { UserPreference } from 'types/api/preferences/preference';
 import { DataSource } from 'types/common/queryBuilder';
 import { USER_ROLES } from 'types/roles';
 import { isIngestionActive } from 'utils/app';
+import { getAssetUrl } from 'utils/basePath';
 import { popupContainer } from 'utils/selectPopupContainer';
 
 import AlertRules from './AlertRules/AlertRules';
@@ -363,13 +364,13 @@ export default function Home(): JSX.Element {
 										size="small"
 										className="periscope-btn secondary welcome-checklist-btn"
 									>
-										<img
-											src="/Icons/spinner-half-blue.svg"
-											alt="spinner-half-blue"
-											width={16}
-											height={16}
-											className="welcome-checklist-icon"
-										/>
+								<img
+									src={getAssetUrl('/Icons/spinner-half-blue.svg')}
+									alt="spinner-half-blue"
+									width={16}
+									height={16}
+									className="welcome-checklist-icon"
+								/>
 										&nbsp; Welcome checklist
 									</Button>
 								</Popover>
@@ -391,7 +392,7 @@ export default function Home(): JSX.Element {
 					/>
 
 					<div className="divider">
-						<img src="/Images/dotted-divider.svg" alt="divider" />
+						<img src={getAssetUrl('/Images/dotted-divider.svg')} alt="divider" />
 					</div>
 
 					<div className="active-ingestions-container">
@@ -526,15 +527,15 @@ export default function Home(): JSX.Element {
 								<Card.Content>
 									<div className="section-container">
 										<div className="section-content">
-											<div className="section-icon">
-												<img
-													src="/Icons/wrench.svg"
-													alt="wrench"
-													width={16}
-													height={16}
-													loading="lazy"
-												/>
-											</div>
+										<div className="section-icon">
+											<img
+												src={getAssetUrl('/Icons/wrench.svg')}
+												alt="wrench"
+												width={16}
+												height={16}
+												loading="lazy"
+											/>
+										</div>
 
 											<div className="section-title">
 												<div className="title">Filter and save views with the Explorer</div>
@@ -596,14 +597,14 @@ export default function Home(): JSX.Element {
 								<Card.Content>
 									<div className="section-container">
 										<div className="section-content">
-											<div className="section-icon">
-												<img
-													src="/Icons/dashboard.svg"
-													alt="dashboard"
-													width={16}
-													height={16}
-												/>
-											</div>
+										<div className="section-icon">
+											<img
+												src={getAssetUrl('/Icons/dashboard.svg')}
+												alt="dashboard"
+												width={16}
+												height={16}
+											/>
+										</div>
 
 											<div className="section-title">
 												<div className="title">Create a dashboard</div>
@@ -637,15 +638,15 @@ export default function Home(): JSX.Element {
 								<Card.Content>
 									<div className="section-container">
 										<div className="section-content">
-											<div className="section-icon">
-												<img
-													src="/Icons/cracker.svg"
-													alt="cracker"
-													width={16}
-													height={16}
-													loading="lazy"
-												/>
-											</div>
+										<div className="section-icon">
+											<img
+												src={getAssetUrl('/Icons/cracker.svg')}
+												alt="cracker"
+												width={16}
+												height={16}
+												loading="lazy"
+											/>
+										</div>
 
 											<div className="section-title">
 												<div className="title">Add an alert</div>
@@ -714,21 +715,21 @@ export default function Home(): JSX.Element {
 												/>
 											</div>
 											<div className="checklist-container-right-img">
-												<div className="checklist-img-bg-container">
-													<img
-														src="/Images/perilianBackground.svg"
-														alt="not-found"
-														className="checklist-img-bg"
-													/>
-												</div>
+											<div className="checklist-img-bg-container">
+												<img
+													src={getAssetUrl('/Images/perilianBackground.svg')}
+													alt="not-found"
+													className="checklist-img-bg"
+												/>
+											</div>
 
-												<div className="checklist-img-container">
-													<img
-														src="/Images/allInOne.svg"
-														alt="checklist-img"
-														className="checklist-img"
-													/>
-												</div>
+											<div className="checklist-img-container">
+												<img
+													src={getAssetUrl('/Images/allInOne.svg')}
+													alt="checklist-img"
+													className="checklist-img"
+												/>
+											</div>
 											</div>
 										</div>
 									</motion.div>

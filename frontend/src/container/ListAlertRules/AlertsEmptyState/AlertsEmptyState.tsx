@@ -9,6 +9,7 @@ import history from 'lib/history';
 import { useAppContext } from 'providers/App/App';
 import { useCallback, useState } from 'react';
 import { DataSource } from 'types/common/queryBuilder';
+import { getAssetUrl } from 'utils/basePath';
 
 import AlertInfoCard from './AlertInfoCard';
 import { ALERT_CARDS, ALERT_INFO_LINKS } from './alertLinks';
@@ -54,7 +55,7 @@ export function AlertsEmptyState(): JSX.Element {
 					<div className="alert-content">
 						<section className="heading">
 							<img
-								src="/Icons/alert_emoji.svg"
+								src={getAssetUrl('/Icons/alert_emoji.svg')}
 								alt="alert-header"
 								style={{ height: '32px', width: '32px' }}
 							/>

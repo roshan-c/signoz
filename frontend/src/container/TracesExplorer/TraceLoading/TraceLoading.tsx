@@ -3,6 +3,7 @@ import './TraceLoading.styles.scss';
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { DataSource } from 'types/common/queryBuilder';
+import { getAssetUrl } from 'utils/basePath';
 
 export function TracesLoading(): JSX.Element {
 	const { t } = useTranslation('common');
@@ -11,7 +12,7 @@ export function TracesLoading(): JSX.Element {
 			<div className="loading-traces-content">
 				<img
 					className="loading-gif"
-					src="/Icons/loading-plane.gif"
+					src={getAssetUrl('/Icons/loading-plane.gif')}
 					alt="wait-icon"
 				/>
 

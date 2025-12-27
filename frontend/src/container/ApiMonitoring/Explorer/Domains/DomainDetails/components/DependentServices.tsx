@@ -12,6 +12,7 @@ import { UnfoldVertical } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { UseQueryResult } from 'react-query';
 import { SuccessResponse } from 'types/api';
+import { getAssetUrl, getFullUrl } from 'utils/basePath';
 
 import ErrorState from './ErrorState';
 
@@ -77,12 +78,12 @@ function DependentServices({
 						emptyText:
 							isLoading || isRefetching ? null : (
 								<div className="no-status-code-data-message-container">
-									<div className="no-status-code-data-message-content">
-										<img
-											src="/Icons/emptyState.svg"
-											alt="thinking-emoji"
-											className="empty-state-svg"
-										/>
+								<div className="no-status-code-data-message-content">
+									<img
+										src={getAssetUrl('/Icons/emptyState.svg')}
+										alt="thinking-emoji"
+										className="empty-state-svg"
+									/>
 
 										<Typography.Text className="no-status-code-data-message">
 											This query had no results. Edit your query and try again!
@@ -93,20 +94,16 @@ function DependentServices({
 					}}
 					onRow={(record): { onClick: () => void; className: string } => ({
 						onClick: (): void => {
-							const url = new URL(
-								`/services/${
-									record.serviceData.serviceName &&
-									record.serviceData.serviceName !== '-'
-										? record.serviceData.serviceName
-										: ''
-								}`,
-								window.location.origin,
-							);
+							const servicePath = `/services/${
+								record.serviceData.serviceName &&
+								record.serviceData.serviceName !== '-'
+									? record.serviceData.serviceName
+									: ''
+							}`;
 							const urlQuery = new URLSearchParams();
 							urlQuery.set(QueryParams.startTime, timeRange.startTime.toString());
 							urlQuery.set(QueryParams.endTime, timeRange.endTime.toString());
-							url.search = urlQuery.toString();
-							window.open(url.toString(), '_blank');
+							window.open(getFullUrl(`${servicePath}?${urlQuery.toString()}`), '_blank');
 						},
 						className: 'clickable-row',
 					})}

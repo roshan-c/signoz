@@ -1,6 +1,7 @@
 import './Login.styles.scss';
 
 import LoginContainer from 'container/Login';
+import { getAssetUrl } from 'utils/basePath';
 
 function Login(): JSX.Element {
 	return (
@@ -9,7 +10,7 @@ function Login(): JSX.Element {
 			<div className="login-page-content">
 				<div className="brand-container">
 					<img
-						src="/Logos/signoz-brand-logo.svg"
+						src={getAssetUrl('/Logos/signoz-brand-logo.svg')}
 						alt="logo"
 						className="brand-logo"
 					/>

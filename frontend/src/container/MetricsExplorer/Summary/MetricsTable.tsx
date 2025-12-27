@@ -10,6 +10,7 @@ import {
 import { SorterResult } from 'antd/es/table/interface';
 import { Info } from 'lucide-react';
 import { useCallback } from 'react';
+import { getAssetUrl } from 'utils/basePath';
 
 import { MetricsListItemRowData, MetricsTableProps } from './types';
 import { getMetricsTableColumns } from './utils';
@@ -85,7 +86,7 @@ function MetricsTable({
 							}
 						>
 							<img
-								src="/Icons/emptyState.svg"
+								src={getAssetUrl('/Icons/emptyState.svg')}
 								alt="thinking-emoji"
 								className="empty-state-svg"
 							/>

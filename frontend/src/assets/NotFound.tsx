@@ -1,3 +1,5 @@
+import { getAssetUrl } from 'utils/basePath';
+
 function NotFound(): JSX.Element {
 	return (
 		<img
@@ -5,7 +7,7 @@ function NotFound(): JSX.Element {
 				maxHeight: 480,
 				maxWidth: 480,
 			}}
-			src="/Images/notFound404.png"
+			src={getAssetUrl('/Images/notFound404.png')}
 			alt="not-found"
 		/>
 	);

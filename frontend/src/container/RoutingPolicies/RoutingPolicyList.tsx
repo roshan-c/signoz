@@ -1,6 +1,7 @@
 import { Button, Table, TableProps, Typography } from 'antd';
 import { RotateCw } from 'lucide-react';
 import { useMemo } from 'react';
+import { getAssetUrl } from 'utils/basePath';
 
 import RoutingPolicyListItem from './RoutingPolicyListItem';
 import { RoutingPolicy, RoutingPolicyListProps } from './types';
@@ -37,10 +38,10 @@ function RoutingPolicyList({
 		() => (
 			<div className="no-routing-policies-message-container">
 				{showError ? (
-					<img src="/Icons/awwSnap.svg" alt="aww-snap" className="error-state-svg" />
+					<img src={getAssetUrl('/Icons/awwSnap.svg')} alt="aww-snap" className="error-state-svg" />
 				) : (
 					<img
-						src="/Icons/emptyState.svg"
+						src={getAssetUrl('/Icons/emptyState.svg')}
 						alt="thinking-emoji"
 						className="empty-state-svg"
 					/>

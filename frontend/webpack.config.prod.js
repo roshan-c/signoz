@@ -58,6 +58,7 @@ const plugins = [
 			SENTRY_DSN: process.env.SENTRY_DSN,
 			TUNNEL_URL: process.env.TUNNEL_URL,
 			TUNNEL_DOMAIN: process.env.TUNNEL_DOMAIN,
+			BASE_PATH: process.env.BASE_PATH || '/',
 		}),
 	}),
 	new MiniCssExtractPlugin(),

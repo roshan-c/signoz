@@ -6,6 +6,7 @@ import history from 'lib/history';
 import { useAppContext } from 'providers/App/App';
 import { useEffect } from 'react';
 import { LicensePlatform, LicenseState } from 'types/api/licensesV3/getActive';
+import { getAssetUrl } from 'utils/basePath';
 
 function WorkspaceAccessRestricted(): JSX.Element {
 	const { activeLicense, isFetchingActiveLicense } = useAppContext();
@@ -114,7 +115,7 @@ function WorkspaceAccessRestricted(): JSX.Element {
 							</Row>
 							<div className="workspace-access-restricted__creative">
 								<img
-									src="/Images/feature-graphic-correlation.svg"
+									src={getAssetUrl('/Images/feature-graphic-correlation.svg')}
 									alt="correlation-graphic"
 								/>
 							</div>

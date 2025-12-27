@@ -3,6 +3,7 @@
 import './FullScreenHeader.styles.scss';
 
 import history from 'lib/history';
+import { getAssetUrl } from 'utils/basePath';
 
 export default function FullScreenHeader({
 	overrideRoute,
@@ -15,7 +16,7 @@ export default function FullScreenHeader({
 	return (
 		<div className="full-screen-header-container">
 			<div className="brand-logo" onClick={handleLogoClick}>
-				<img src="/Logos/signoz-brand-logo.svg" alt="SigNoz" />
+				<img src={getAssetUrl('/Logos/signoz-brand-logo.svg')} alt="SigNoz" />
 
 				<div className="brand-logo-name">SigNoz</div>
 			</div>

@@ -9,6 +9,7 @@ import Card from 'periscope/components/Card/Card';
 import { useAppContext } from 'providers/App/App';
 import { useEffect, useState } from 'react';
 import { LicensePlatform } from 'types/api/licensesV3/getActive';
+import { getAssetUrl } from 'utils/basePath';
 
 import { DOCS_LINKS } from '../constants';
 
@@ -73,15 +74,15 @@ function DataSourceInfo({
 				<Card.Content>
 					<div className="workspace-ready-container">
 						<div className="workspace-ready-header">
-							<Typography className="workspace-ready-title">
-								<img src="/Icons/hurray.svg" alt="hurray" />
-								Your workspace is ready
-							</Typography>
+						<Typography className="workspace-ready-title">
+							<img src={getAssetUrl('/Icons/hurray.svg')} alt="hurray" />
+							Your workspace is ready
+						</Typography>
 
 							<Button
 								type="primary"
 								className="periscope-btn primary"
-								icon={<img src="/Icons/container-plus.svg" alt="plus" />}
+								icon={<img src={getAssetUrl('/Icons/container-plus.svg')} alt="plus" />}
 								role="button"
 								tabIndex={0}
 								onClick={(): void => {
@@ -191,7 +192,7 @@ function DataSourceInfo({
 			<div className="hello-wave-container">
 				<div className="hello-wave-img-container">
 					<img
-						src="/Icons/hello-wave.svg"
+						src={getAssetUrl('/Icons/hello-wave.svg')}
 						alt="hello-wave"
 						className="hello-wave-img"
 						width={36}

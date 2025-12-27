@@ -48,6 +48,7 @@ const plugins = [
 			SENTRY_DSN: process.env.SENTRY_DSN,
 			TUNNEL_URL: process.env.TUNNEL_URL,
 			TUNNEL_DOMAIN: process.env.TUNNEL_DOMAIN,
+			BASE_PATH: process.env.BASE_PATH || '/',
 		}),
 	}),
 	sentryWebpackPlugin({
@@ -64,6 +65,7 @@ if (process.env.BUNDLE_ANALYSER === 'true') {
 /**
  * @type {import('webpack').Configuration}
  */
+const basePath = process.env.BASE_PATH || '/';
 const config = {
 	mode: 'development',
 	devtool: 'source-map',
@@ -71,14 +73,15 @@ const config = {
 	devServer: {
 		historyApiFallback: {
 			disableDotRule: true,
+			index: basePath,
 		},
-		open: true,
+		open: basePath,
 		hot: true,
 		liveReload: true,
 		port: portFinderSync.getPort(3301),
 		static: {
 			directory: resolve(__dirname, 'public'),
-			publicPath: '/',
+			publicPath: basePath,
 			watch: true,
 		},
 		allowedHosts: 'all',
@@ -86,7 +89,7 @@ const config = {
 	target: 'web',
 	output: {
 		path: resolve(__dirname, './build'),
-		publicPath: '/',
+		publicPath: basePath,
 	},
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
